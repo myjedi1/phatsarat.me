@@ -1,0 +1,110 @@
+<div
+  class="bg-background text-on-surface font-body-md selection:bg-primary-fixed flex flex-col min-h-screen"
+>
+  <app-navbar />
+
+  <main class="max-w-container-max mx-auto px-gutter py-16 md:py-32 flex-grow w-full">
+    <!-- Header Section -->
+    <header class="mb-24">
+      <div class="flex flex-col gap-4">
+        <span class="font-label-md text-label-md uppercase tracking-[0.2em] text-secondary">
+          Expertise
+        </span>
+        <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg max-w-3xl">
+          Technical Curations
+        </h1>
+        <p class="font-body-lg text-body-lg text-secondary max-w-xl mt-6">
+          A collection of technologies and frameworks leveraged to build
+          high-performance, scalable, and aesthetically precise digital
+          products.
+        </p>
+      </div>
+    </header>
+
+    <!-- Categories Section -->
+    <div class="flex flex-col gap-16 md:gap-section-gap">
+      @for (category of categories; track category.id) {
+        <section [id]="category.id">
+          <div class="flex items-center gap-base mb-12">
+            <h2 class="font-headline-lg text-headline-lg shrink-0">{{ category.title }}</h2>
+            <div class="editorial-line w-full"></div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-base">
+            @for (card of category.cards; track card.name) {
+              <div appRevealOnScroll class="skill-card bg-surface p-8 transition-all duration-300 group">
+                <div
+                  class="icon-box w-12 h-12 flex items-center justify-center border border-border-subtle bg-background transition-colors duration-300 mb-6"
+                >
+                  <span class="material-symbols-outlined text-primary">{{ card.icon }}</span>
+                </div>
+                <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-2">{{ card.name }}</h3>
+                <p class="font-body-md text-body-md text-secondary mb-6">{{ card.description }}</p>
+                <div class="flex flex-wrap gap-2">
+                  @for (tag of card.tags; track tag) {
+                    <span class="bg-surface-container-high px-2 py-1 font-label-md text-label-md">
+                      {{ tag }}
+                    </span>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </section>
+      }
+    </div>
+
+    <!-- Featured Code Block Section -->
+    <section class="mt-16 md:mt-section-gap">
+      <div class="bg-surface border border-border-subtle overflow-hidden">
+        <div class="flex items-center gap-2 px-6 py-4 border-b border-border-subtle">
+          <div class="w-2 h-2 rounded-full bg-border-subtle"></div>
+          <div class="w-2 h-2 rounded-full bg-border-subtle"></div>
+          <div class="w-2 h-2 rounded-full bg-border-subtle"></div>
+          <span class="ml-4 font-label-md text-label-md text-secondary uppercase tracking-widest">
+            Philosophy.rs
+          </span>
+        </div>
+        <div class="p-8">
+          <pre class="font-code text-code text-on-surface overflow-x-auto w-full"><code>impl Architect &#123;
+    pub fn build_with_precision(&amp;self, project: Project) -&gt; Result&lt;System, Error&gt; &#123;
+        let code = project.clean_logic();
+        let design = project.minimalist_ui();
+
+        System::unify(code, design)
+            .with_performance_budget(60.0) // 60fps
+            .with_accessibility_standard("WCAG 2.1")
+            .deploy()
+    &#125;
+&#125;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mt-16 md:mt-section-gap flex flex-col items-center text-center">
+      <div class="max-w-2xl">
+        <h2 class="font-headline-lg text-headline-lg mb-6">Looking for a specialized stack?</h2>
+        <p class="font-body-md text-body-md text-secondary mb-12">
+          I continuously evolve my toolkit based on project requirements and
+          performance thresholds. Let's discuss your architectural needs.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            routerLink="/contact"
+            class="bg-primary text-on-primary px-8 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-on-primary-fixed-variant transition-colors w-full sm:w-auto text-center"
+          >
+            Start Project
+          </a>
+          <a
+            href="#"
+            class="border border-primary text-primary px-8 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-surface transition-colors w-full sm:w-auto text-center"
+          >
+            View Github
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <app-footer />
+</div>

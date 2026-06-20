@@ -1,0 +1,111 @@
+<div class="font-body-md text-body-md antialiased flex flex-col min-h-screen">
+  <app-navbar />
+
+  <main class="max-w-container-max mx-auto px-gutter py-section-gap flex-grow w-full">
+    <!-- Page Header -->
+    <section class="mb-20">
+      <h1 class="font-display-lg text-display-lg mb-4 hidden md:block">Experience</h1>
+      <h1 class="font-display-lg-mobile text-display-lg-mobile mb-4 md:hidden">Experience</h1>
+      <p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+        A selective chronology of engineering leadership and user-centric
+        systems development across high-performance teams.
+      </p>
+    </section>
+
+    <!-- Experience Timeline Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 border-l border-border-subtle relative md:ml-0 pl-4">
+      @for (entry of entries; track entry.company; let isLast = $last) {
+        <div
+          appRevealOnScroll
+          class="md:col-start-2 md:col-span-11 relative group experience-card pl-6 md:pl-8"
+          [class.pb-section-gap]="!isLast"
+          [class.pb-12]="isLast"
+        >
+          <div
+            class="absolute md:-left-[41px] top-0 w-4 h-4 rounded-full border-2 bg-background timeline-dot transition-colors duration-300 -left-[9px]"
+            [class.border-primary]="entry.dotFilled"
+            [class.border-border-subtle]="!entry.dotFilled"
+          ></div>
+
+          <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-4">
+            <h2 class="font-headline-lg text-headline-lg text-primary">{{ entry.company }}</h2>
+            <span class="font-code text-code text-secondary">{{ entry.period }}</span>
+          </div>
+
+          <div class="mb-8">
+            <p
+              class="font-label-md text-label-md uppercase tracking-widest mb-2"
+              [class.text-primary-fixed-dim]="entry.dotFilled"
+              [class.text-secondary]="!entry.dotFilled"
+            >
+              {{ entry.role }}
+            </p>
+            <p class="font-body-lg text-body-lg max-w-3xl">{{ entry.description }}</p>
+          </div>
+
+          <!-- Highlights grid (Linear Systems) -->
+          @if (entry.highlights) {
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              @for (highlight of entry.highlights; track highlight.title) {
+                <div class="p-6 bg-surface border border-border-subtle transition-all duration-200">
+                  <span class="material-symbols-outlined text-primary mb-4 block w-fit">{{ highlight.icon }}</span>
+                  <h3 class="font-label-md text-label-md uppercase font-bold mb-2">{{ highlight.title }}</h3>
+                  <p class="text-secondary">{{ highlight.description }}</p>
+                </div>
+              }
+            </div>
+          }
+
+          <!-- Key contribution (Aperture Science) -->
+          @if (entry.keyContribution) {
+            <div class="bg-surface border border-border-subtle p-gutter">
+              <div class="flex items-start gap-gutter flex-col md:flex-row">
+                <div
+                  class="aspect-square bg-white border border-border-subtle flex items-center justify-center overflow-hidden w-full md:w-1/3"
+                >
+                  <div
+                    class="w-full h-full bg-cover bg-center"
+                    [attr.aria-label]="entry.keyContribution.imageAlt"
+                    [style.background-image]="'url(' + entry.keyContribution.imageUrl + ')'"
+                  ></div>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-label-md text-label-md uppercase font-bold mb-4">Key Contribution</h4>
+                  <ul class="space-y-3 font-body-md text-secondary">
+                    @for (point of entry.keyContribution.points; track point) {
+                      <li class="flex items-start gap-2 flex-col md:flex-row">
+                        <span class="material-symbols-outlined text-primary text-[18px]">check_small</span>
+                        {{ point }}
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          }
+
+          <!-- Side projects (Ghost Foundation) -->
+          @if (entry.sideProjects) {
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+              @for (project of entry.sideProjects; track project.title) {
+                <div class="border border-border-subtle p-6 hover:border-primary transition-colors">
+                  <span class="material-symbols-outlined text-primary mb-2 block w-fit">{{ project.icon }}</span>
+                  <h5 class="font-label-md text-label-md font-bold">{{ project.title }}</h5>
+                  <p class="text-secondary mt-2">{{ project.description }}</p>
+                </div>
+              }
+            </div>
+          }
+
+          <div class="mt-8 flex flex-wrap gap-2">
+            @for (tag of entry.tags; track tag) {
+              <span class="bg-surface px-2 py-1 font-label-md text-label-md">{{ tag }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </main>
+
+  <app-footer />
+</div>

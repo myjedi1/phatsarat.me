@@ -1,0 +1,67 @@
+<header class="w-full top-0 bg-background border-b border-border-subtle z-50 sticky">
+  <nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+    <a
+      routerLink="/"
+      class="font-headline-lg text-headline-lg font-bold text-primary"
+      (click)="closeMenu()"
+    >
+      PHATSARAT.me
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-10">
+      @for (link of links; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="text-primary border-b-2 border-primary pb-1"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200 ease-in-out"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <a
+        class="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md uppercase tracking-widest hover:bg-[#333333] transition-all"
+        href="#"
+      >
+        Resume
+      </a>
+    </div>
+
+    <!-- Mobile menu toggle -->
+    <button
+      type="button"
+      class="md:hidden text-primary p-2"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span class="material-symbols-outlined">
+        {{ menuOpen() ? 'close' : 'menu' }}
+      </span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu panel -->
+  @if (menuOpen()) {
+    <div class="md:hidden border-t border-border-subtle bg-background px-gutter py-6 flex flex-col gap-6">
+      @for (link of links; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="text-primary"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          (click)="closeMenu()"
+          class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <a
+        class="bg-primary text-on-primary px-6 py-3 font-label-md text-label-md uppercase tracking-widest text-center hover:bg-[#333333] transition-all"
+        href="#"
+      >
+        Resume
+      </a>
+    </div>
+  }
+</header>

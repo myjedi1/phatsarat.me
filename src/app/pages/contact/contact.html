@@ -1,0 +1,108 @@
+<div class="font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+  <app-navbar />
+
+  <main class="max-w-container-max mx-auto px-gutter py-section-gap flex-grow w-full">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-element-gap gap-8">
+      <!-- Hero Header Segment -->
+      <section class="md:col-span-12 mb-16">
+        <span class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4 block">
+          Available for collaboration
+        </span>
+        <h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg leading-none max-w-4xl">
+          Let's build something <span appLetterSpacingHover class="italic">precise.</span>
+        </h1>
+      </section>
+
+      <!-- Contact Matrix (Bento-style layout) -->
+      <div class="md:col-span-8 flex flex-col space-y-8">
+        <!-- Large Interactive Email Card -->
+        <div
+          appHoverLift
+          class="bg-surface p-8 md:p-12 border border-border-subtle group hover:border-primary transition-colors duration-300"
+        >
+          <p class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-8">
+            Inquiries
+          </p>
+          <a
+            class="font-headline-lg md:text-display-lg-mobile block transition-transform duration-300 group-hover:translate-x-2 text-headline-lg-mobile break-all"
+            href="mailto:hello@alexchen.dev"
+          >
+            hello@alexchen.dev
+          </a>
+          <div class="mt-8 flex items-center gap-2 text-secondary group-hover:text-primary transition-colors">
+            <span class="material-symbols-outlined">north_east</span>
+            <span class="font-label-md text-label-md uppercase tracking-widest">
+              Click to start a conversation
+            </span>
+          </div>
+        </div>
+
+        <!-- Location / Response time -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-element-gap">
+          <div appHoverLift class="bg-surface p-8 border border-border-subtle">
+            <p class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4">
+              Location
+            </p>
+            <p class="font-body-lg text-body-lg">San Francisco, CA</p>
+            <p class="font-label-md text-label-md text-text-muted mt-2">Remote Friendly • GMT-7</p>
+          </div>
+          <div appHoverLift class="bg-surface p-8 border border-border-subtle flex flex-col justify-between">
+            <div>
+              <p class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4">
+                Response Time
+              </p>
+              <p class="font-body-lg text-body-lg">Within 24 Hours</p>
+            </div>
+            <div class="flex gap-1 mt-4 items-center">
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span class="font-code text-code text-secondary uppercase">Active Status</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links & Sidebar -->
+      <aside class="md:col-span-4 flex flex-col gap-element-gap">
+        <div class="bg-primary text-on-primary p-8 h-full flex flex-col justify-between">
+          <div>
+            <p class="font-label-md text-label-md uppercase tracking-widest opacity-60 mb-8">
+              Connect
+            </p>
+            <ul class="space-y-6">
+              @for (link of socialLinks; track link.label) {
+                <li>
+                  <a class="flex items-center justify-between group" [href]="link.href">
+                    <span class="font-body-lg text-body-lg group-hover:translate-x-2 transition-transform">
+                      {{ link.label }}
+                    </span>
+                    <span class="material-symbols-outlined opacity-60 group-hover:opacity-100">
+                      arrow_forward
+                    </span>
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+          <div class="mt-12 pt-8 border-t border-white/10">
+            <p class="font-code text-code opacity-60 mb-2">LAST_UPDATED: 2024_05_22</p>
+            <p class="font-code text-code opacity-60">STATUS: OPEN_FOR_HIRE</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Aesthetic Decoration (Code Block) -->
+      <section class="md:col-span-12 mt-8 md:mt-12 overflow-hidden">
+        <div class="bg-surface border border-border-subtle rounded-sm p-4">
+          <pre class="font-code text-code text-secondary whitespace-pre-wrap"><span class="text-primary">const</span> collaborator = &#123;
+  intent: <span class="text-primary">"build_something_precise"</span>,
+  availability: <span class="text-primary">true</span>,
+  stack: [<span class="text-primary">"TypeScript"</span>, <span class="text-primary">"Rust"</span>, <span class="text-primary">"React"</span>, <span class="text-primary">"PostgreSQL"</span>],
+  contact: <span class="text-primary">() =&gt;</span> window.location.href = <span class="text-primary">"mailto:hello&#64;alexchen.dev"</span>
+&#125;;</pre>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <app-footer />
+</div>

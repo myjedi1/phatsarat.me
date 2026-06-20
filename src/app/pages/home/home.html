@@ -1,0 +1,50 @@
+<div class="font-body-md text-body-md flex flex-col min-h-screen">
+  <app-navbar />
+
+  <main class="max-w-container-max mx-auto px-gutter flex-grow w-full">
+    <!-- Hero / About -->
+    <section
+      class="py-12 md:py-section-gap flex justify-center min-h-[calc(100vh-200px)] md:grid md:grid-cols-2 items-center gap-12"
+      id="about"
+    >
+      <div class="w-full mb-8 md:mb-0 md:order-2" appRevealOnScroll>
+        <div class="aspect-[3/4] overflow-hidden bg-surface-container">
+          <img
+            alt="Phatsarat Portrait"
+            class="w-full h-full object-cover grayscale contrast-125"
+            [src]="my_photo"
+          />
+        </div>
+      </div>
+      <div class="max-w-4xl md:order-1" appRevealOnScroll>
+        <h1
+          class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg mb-8 leading-tight md:text-headline-lg"
+        >
+          Hello, I'm Jay, a Developer focused on
+          <span class="text-secondary">Distributed Systems &amp; Editorial UI.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+          I build tools that empower developers and craft interfaces that prioritize content above
+          all else. My approach is rooted in the philosophy of "curation"—selecting only the most
+          essential elements to solve complex problems.
+        </p>
+        <div class="mt-12 flex flex-col md:flex-row gap-6">
+          <a
+            class="bg-primary text-on-primary px-8 py-3 hover:bg-opacity-80 transition-all font-label-md text-label-md text-center"
+            routerLink="/experience"
+          >
+            View Experience
+          </a>
+          <a
+            class="border border-primary text-primary px-8 py-3 hover:bg-surface-container transition-all font-label-md text-label-md text-center"
+            routerLink="/contact"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <app-footer />
+</div>
