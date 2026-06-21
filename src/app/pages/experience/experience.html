@@ -7,13 +7,15 @@
       <h1 class="font-display-lg text-display-lg mb-4 hidden md:block">Experience</h1>
       <h1 class="font-display-lg-mobile text-display-lg-mobile mb-4 md:hidden">Experience</h1>
       <p class="font-body-lg text-body-lg text-secondary max-w-2xl">
-        A selective chronology of engineering leadership and user-centric
-        systems development across high-performance teams.
+        A journey through enterprise software development, system integration, and digital
+        transformation initiatives across complex business environments.
       </p>
     </section>
 
     <!-- Experience Timeline Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 border-l border-border-subtle relative md:ml-0 pl-4">
+    <div
+      class="grid grid-cols-1 md:grid-cols-12 gap-12 border-l border-border-subtle relative md:ml-0 pl-4"
+    >
       @for (entry of entries; track entry.company; let isLast = $last) {
         <div
           appRevealOnScroll
@@ -48,8 +50,12 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
               @for (highlight of entry.highlights; track highlight.title) {
                 <div class="p-6 bg-surface border border-border-subtle transition-all duration-200">
-                  <span class="material-symbols-outlined text-primary mb-4 block w-fit">{{ highlight.icon }}</span>
-                  <h3 class="font-label-md text-label-md uppercase font-bold mb-2">{{ highlight.title }}</h3>
+                  <span class="material-symbols-outlined text-primary mb-4 block w-fit">{{
+                    highlight.icon
+                  }}</span>
+                  <h3 class="font-label-md text-label-md uppercase font-bold mb-2">
+                    {{ highlight.title }}
+                  </h3>
                   <p class="text-secondary">{{ highlight.description }}</p>
                 </div>
               }
@@ -70,11 +76,15 @@
                   ></div>
                 </div>
                 <div class="flex-1">
-                  <h4 class="font-label-md text-label-md uppercase font-bold mb-4">Key Contribution</h4>
+                  <h4 class="font-label-md text-label-md uppercase font-bold mb-4">
+                    Key Contribution
+                  </h4>
                   <ul class="space-y-3 font-body-md text-secondary">
                     @for (point of entry.keyContribution.points; track point) {
                       <li class="flex items-start gap-2 flex-col md:flex-row">
-                        <span class="material-symbols-outlined text-primary text-[18px]">check_small</span>
+                        <span class="material-symbols-outlined text-primary text-[18px]"
+                          >check_small</span
+                        >
                         {{ point }}
                       </li>
                     }
@@ -89,7 +99,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
               @for (project of entry.sideProjects; track project.title) {
                 <div class="border border-border-subtle p-6 hover:border-primary transition-colors">
-                  <span class="material-symbols-outlined text-primary mb-2 block w-fit">{{ project.icon }}</span>
+                  <span class="material-symbols-outlined text-primary mb-2 block w-fit">{{
+                    project.icon
+                  }}</span>
                   <h5 class="font-label-md text-label-md font-bold">{{ project.title }}</h5>
                   <p class="text-secondary mt-2">{{ project.description }}</p>
                 </div>

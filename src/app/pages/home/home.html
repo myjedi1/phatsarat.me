@@ -3,12 +3,19 @@
 
   <main class="max-w-container-max mx-auto px-gutter flex-grow w-full">
     <!-- Hero / About -->
-    <section
+    <!-- <section
       class="py-12 md:py-section-gap flex justify-center min-h-[calc(100vh-200px)] md:grid md:grid-cols-2 items-center gap-12"
+      id="about"
+    > -->
+    <section
+      class="py-12 md:py-section-gap flex flex-col justify-center min-h-[calc(100vh-200px)] md:grid md:grid-cols-2 items-center gap-12"
       id="about"
     >
       <div class="w-full mb-8 md:mb-0 md:order-2" appRevealOnScroll>
-        <div class="aspect-[3/4] overflow-hidden bg-surface-container">
+        <!-- <div class="aspect-[3/4] overflow-hidden bg-surface-container sm:rounded-t-[500px]"> -->
+        <div
+          class="aspect-[3.5/4] overflow-hidden bg-surface-container rounded-t-[500px] md:rounded-none"
+        >
           <img
             alt="Phatsarat Portrait"
             class="w-full h-full object-cover grayscale contrast-125"
@@ -20,13 +27,13 @@
         <h1
           class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg mb-8 leading-tight md:text-headline-lg"
         >
-          Hello, I'm Jay, a Developer focused on
-          <span class="text-secondary">Distributed Systems &amp; Editorial UI.</span>
+          Hello, I’m Jay, a Full-Stack Developer specializing in
+          <span class="text-secondary">modern technologies &amp; Self improvement.</span>
         </h1>
         <p class="font-body-lg text-body-lg text-secondary max-w-2xl">
-          I build tools that empower developers and craft interfaces that prioritize content above
-          all else. My approach is rooted in the philosophy of "curation"—selecting only the most
-          essential elements to solve complex problems.
+          I design and develop applications that bridge business needs with technical solutions.
+          From scalable backend services and database design to responsive user interfaces, I focus
+          on building software that is efficient, maintainable, and built to last.
         </p>
         <div class="mt-12 flex flex-col md:flex-row gap-6">
           <a

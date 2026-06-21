@@ -64,71 +64,62 @@ export class PortfolioData {
 
   readonly experience: ExperienceEntry[] = [
     {
-      company: 'Linear Systems',
-      period: '2021 — PRESENT',
-      role: 'Lead Frontend Architect',
+      company: 'Bangkok Commercial Asset Management',
+      period: 'Aug 2024 — PRESENT',
+      role: 'Full-stack Developer',
       description:
-        'Orchestrating the evolution of design systems and frontend infrastructure for high-scale enterprise operations. Focused on modularity, developer ergonomics, and sub-100ms interaction latency.',
+        'Building and modernizing enterprise web applications that transform complex business workflows into scalable, maintainable digital systems. Focused on data integrity, system integration, and developer productivity.',
       dotFilled: true,
       highlights: [
         {
           icon: 'architecture',
-          title: 'System Design',
-          description: 'Engineered a multi-tenant component library serving 40+ micro-frontends.',
+          title: 'Enterprise Systems',
+          description:
+            'Designed and maintained business-critical applications supporting large-scale operational workflows.',
+        },
+        {
+          icon: 'sync_alt',
+          title: 'System Integration',
+          description:
+            'Connected internal platforms and external services through reliable APIs and data pipelines.',
+        },
+        {
+          icon: 'database',
+          title: 'Data Migration',
+          description:
+            'Migrated millions of legacy records while preserving data integrity and business continuity.',
         },
         {
           icon: 'speed',
           title: 'Performance',
           description:
-            'Reduced initial bundle sizes by 42% through automated tree-shaking and dynamic imports.',
+            'Optimized database queries and application workflows to improve responsiveness and scalability.',
         },
         {
-          icon: 'groups',
-          title: 'Leadership',
-          description: 'Mentoring a team of 12 engineers across globally distributed timezones.',
+          icon: 'web',
+          title: 'Full-Stack Development',
+          description:
+            'Built modern web applications with robust backend services and intuitive user interfaces.',
+        },
+        {
+          icon: 'code',
+          title: 'Developer Experience',
+          description:
+            'Established reusable patterns and tooling to improve maintainability across development teams.',
         },
       ],
-      tags: ['Next.js', 'TypeScript', 'Rust/WASM', 'Tailwind'],
-    },
-    {
-      company: 'Aperture Science',
-      period: '2018 — 2021',
-      role: 'Senior Software Engineer',
-      description:
-        'Developed experimental web interfaces for data visualization and real-time sensory monitoring. Collaborated with hardware teams to bridge the gap between physical sensors and browser-based dashboards.',
-      dotFilled: false,
-      keyContribution: {
-        imageUrl:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuA-bgUP6yhzgLSGbajvCg0mKMmTMitNik8DmaWBspHfrw0TxHVFSD4YjgOw0XVLfkvnxTecxEuh5c9dINzfOXBQ2tVQYShqqFhzJZZABNcpXvSenkD1d05mvaaOKGnOB57LAaE3T7Kl1KnqBFCu60YIK0eIN4FrR8vHThP1YezgWuD6IavRTtYfEeEIzA_Lcx-s-I5hHhi3_RPUmu39Gtbx3fFXbvqG0VVrWgjznsm_OYw6ui6UxUviaR87jsSRi85qbtFl_Qj6_bvK',
-        imageAlt:
-          'A high-contrast, minimalist scientific laboratory interface showing complex data visualizations in black and white.',
-        points: [
-          'Built a real-time WebSocket layer handling 10k+ concurrent data points.',
-          'Implemented a Canvas-based visualization engine for high-frequency updates.',
-        ],
-      },
-      tags: ['React', 'D3.js', 'WebSockets', 'GraphQL'],
-    },
-    {
-      company: 'Ghost Foundation',
-      period: '2015 — 2018',
-      role: 'UI/UX Developer',
-      description:
-        'Pioneered the open-source publishing experience. Focused on the intersection of typography, accessibility, and editorial design for a global user base.',
-      dotFilled: false,
-      sideProjects: [
-        {
-          icon: 'edit_note',
-          title: 'Ghost Editor',
-          description: 'Refined the Markdown/WYSIWYG hybrid editor experience for professional writers.',
-        },
-        {
-          icon: 'universal_currency_alt',
-          title: 'Memberships',
-          description: 'Core contributor to the initial implementation of native subscription logic.',
-        },
+      tags: [
+        'Next.js',
+        'Nest.js',
+        'Tailwind CSS',
+        'TypeScript',
+        'Javascript',
+        'TypeORM',
+        'Node.js',
+        'MySQL',
+        'Postgres',
+        'Oracle',
       ],
-      tags: ['Ember.js', 'Node.js', 'PostgreSQL', 'Design Systems'],
     },
   ];
 
@@ -145,15 +136,9 @@ export class PortfolioData {
         },
         {
           icon: 'memory',
-          name: 'Rust',
+          name: 'Java',
           description: 'High-performance systems programming with memory safety.',
           tags: ['Cargo', 'Wasm'],
-        },
-        {
-          icon: 'dynamic_form',
-          name: 'Go',
-          description: 'Efficient concurrency and robust backend microservices.',
-          tags: ['GRPC', 'Cloud'],
         },
         {
           icon: 'terminal',
