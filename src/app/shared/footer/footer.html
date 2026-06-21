@@ -3,23 +3,22 @@
     class="flex flex-col md:flex-row justify-between items-center py-12 px-gutter max-w-container-max mx-auto gap-6 md:gap-0"
   >
     <div class="text-center md:text-left">
-      <div class="font-label-md text-label-md font-bold text-primary mb-2 uppercase tracking-widest">
-        ARCHITECT
+      <div
+        class="font-label-md text-label-md font-bold text-primary mb-2 uppercase tracking-widest"
+      >
+        PHATSARAT.me
       </div>
-      <p class="font-body-md text-body-md text-secondary">
-        © {{ year }} Developer Curator. Built with precision.
-      </p>
+      <p class="font-body-md text-body-md text-secondary">© {{ year }} Built with precision.</p>
     </div>
     <div class="flex gap-8">
-      <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">
-        LinkedIn
-      </a>
-      <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">
-        GitHub
-      </a>
-      <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">
-        Source
-      </a>
+      @for (item of socialLinks; track $index) {
+        <a
+          class="font-body-md text-body-md text-secondary hover:text-primary transition-colors"
+          [href]="item.href"
+        >
+          {{ item.label }}
+        </a>
+      }
     </div>
   </div>
 </footer>

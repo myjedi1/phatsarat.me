@@ -57,9 +57,9 @@ export interface SocialLink {
 @Injectable({ providedIn: 'root' })
 export class PortfolioData {
   readonly socialLinks: SocialLink[] = [
-    { label: 'GitHub', href: '#' },
-    { label: 'LinkedIn', href: '#' },
-    { label: 'Twitter', href: '#' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/phatsarat-arjharnsiriwong-504b10301/' },
+    { label: 'GitHub', href: 'https://github.com/myjedi1' },
+    { label: 'Instragram', href: 'https://www.instagram.com/myjedi.p/' },
   ];
 
   readonly experience: ExperienceEntry[] = [
@@ -135,16 +135,29 @@ export class PortfolioData {
           tags: ['ESNext', 'OOP'],
         },
         {
+          icon: 'code',
+          name: 'JavaScript',
+          description: 'Building dynamic web experiences with modern browser and runtime APIs.',
+          tags: ['ESNext', 'DOM', 'Node.js'],
+        },
+        {
+          icon: 'database',
+          name: 'SQL',
+          description:
+            'Designing and optimizing relational databases for reliable data management.',
+          tags: ['Query Optimization', 'Data Modeling', 'Joins'],
+        },
+        {
           icon: 'memory',
           name: 'Java',
           description: 'High-performance systems programming with memory safety.',
-          tags: ['Cargo', 'Wasm'],
+          tags: [],
         },
         {
           icon: 'terminal',
           name: 'Python',
           description: 'Data engineering, automation, and rapid prototyping.',
-          tags: ['Django', 'Numpy'],
+          tags: [],
         },
       ],
     },
@@ -153,28 +166,98 @@ export class PortfolioData {
       title: 'Frontend',
       cards: [
         {
-          icon: 'layers',
-          name: 'React',
-          description: 'Component-driven architecture for modern web interfaces.',
-          tags: ['Next.js', 'Zustand'],
+          icon: 'web',
+          name: 'Angular',
+          description:
+            'Building enterprise-grade applications with scalable architectures and reusable components.',
+          tags: ['TypeScript', 'RxJS', 'Standalone Components'],
+        },
+        {
+          icon: 'rocket_launch',
+          name: 'Next.js',
+          description:
+            'Creating production-ready web applications with modern routing and rendering strategies.',
+          tags: ['SSR', 'App Router', 'SEO'],
         },
         {
           icon: 'palette',
           name: 'Tailwind CSS',
-          description: 'Utility-first styling for rapid, systematic design execution.',
-          tags: ['Design Tokens', 'Responsive'],
+          description:
+            'Crafting responsive interfaces through utility-first styling and consistent design systems.',
+          tags: ['Responsive Design', 'Accessibility', 'UI Systems'],
         },
         {
-          icon: 'bolt',
-          name: 'WebAssembly',
-          description: 'Near-native performance for complex browser logic.',
-          tags: ['Low Level', 'Perf'],
+          icon: 'dashboard_customize',
+          name: 'Material Design',
+          description:
+            'Building intuitive user experiences using proven design patterns and components.',
+          tags: ['Angular Material', 'UX', 'Accessibility'],
+        },
+      ],
+    },
+    {
+      id: 'backend',
+      title: 'Backend',
+      cards: [
+        {
+          icon: 'hub',
+          name: 'NestJS',
+          description:
+            'Structured backend framework for building maintainable and scalable services.',
+          tags: ['Dependency Injection', 'Modules', 'Guards'],
         },
         {
-          icon: 'view_in_ar',
-          name: 'Three.js',
-          description: 'Immersive 3D experiences and WebGL visualizations.',
-          tags: ['Shaders', 'Math'],
+          icon: 'dns',
+          name: 'Node.js',
+          description: 'Server-side JavaScript runtime for scalable and event-driven applications.',
+          tags: ['Express', 'REST API', 'Async'],
+        },
+        {
+          icon: 'account_tree',
+          name: 'TypeORM',
+          description: 'Object-relational mapping for managing complex database interactions.',
+          tags: ['Repositories', 'Migrations', 'Query Builder'],
+        },
+        {
+          icon: 'api',
+          name: 'REST APIs',
+          description:
+            'Standardized communication layer for integrating services and applications.',
+          tags: ['JSON', 'Authentication', 'OpenAPI'],
+        },
+      ],
+    },
+    {
+      id: 'database',
+      title: 'Database',
+      cards: [
+        {
+          icon: 'storage',
+          name: 'MySQL',
+          description:
+            'Reliable relational database for web applications and high-volume transactional systems.',
+          tags: ['Indexing', 'Replication', 'Optimization'],
+        },
+        {
+          icon: 'database',
+          name: 'PostgreSQL',
+          description:
+            'Feature-rich database engine designed for scalability, integrity, and analytical workloads.',
+          tags: ['JSONB', 'CTEs', 'Extensions'],
+        },
+        {
+          icon: 'dns',
+          name: 'Oracle Database',
+          description:
+            'Mission-critical database platform used in enterprise environments and large-scale operations.',
+          tags: ['PL/SQL', 'Performance', 'Data Modeling'],
+        },
+        {
+          icon: 'hub',
+          name: 'MongoDB',
+          description:
+            'Document-oriented database for flexible schemas and rapidly evolving application data.',
+          tags: ['Aggregation', 'Document Model', 'Atlas'],
         },
       ],
     },
@@ -185,26 +268,51 @@ export class PortfolioData {
         {
           icon: 'package_2',
           name: 'Docker',
-          description: 'Containerization for consistent deployment cycles.',
-          tags: ['Kubernetes', 'CI/CD'],
+          description:
+            'Containerizing applications to ensure consistent development and deployment environments.',
+          tags: ['Containers', 'Docker Compose', 'Images'],
         },
         {
-          icon: 'database',
-          name: 'PostgreSQL',
-          description: 'Relational data modeling and complex query optimization.',
-          tags: ['SQL', 'Prisma'],
+          icon: 'sync',
+          name: 'Jenkins',
+          description:
+            'Automating build, testing, and deployment workflows through CI/CD pipelines.',
+          tags: ['CI/CD', 'Automation', 'Pipelines'],
         },
         {
-          icon: 'cloud',
-          name: 'AWS',
-          description: 'Scalable cloud infrastructure and serverless solutions.',
-          tags: ['S3', 'Lambda'],
+          icon: 'hub',
+          name: 'Apache Kafka',
+          description:
+            'Event-driven messaging platform for reliable communication between distributed systems.',
+          tags: ['Pub/Sub', 'Streaming', 'Messaging'],
         },
         {
-          icon: 'architecture',
-          name: 'Terraform',
-          description: 'Infrastructure as Code for deterministic environments.',
-          tags: ['HCL', 'Automation'],
+          icon: 'source',
+          name: 'GitHub',
+          description:
+            'Collaborative development platform for source control and project management.',
+          tags: ['Pull Requests', 'Actions', 'Code Review'],
+        },
+        {
+          icon: 'merge_type',
+          name: 'GitLab',
+          description:
+            'Managing repositories, pipelines, and development workflows across engineering teams.',
+          tags: ['CI/CD', 'Merge Requests', 'DevOps'],
+        },
+        {
+          icon: 'account_tree',
+          name: 'Git Flow',
+          description:
+            'Structured branching strategy for managing releases and parallel development.',
+          tags: ['Branching', 'Releases', 'Version Control'],
+        },
+        {
+          icon: 'admin_panel_settings',
+          name: 'Azure AD',
+          description:
+            'Identity and access management for enterprise authentication and authorization.',
+          tags: ['SSO', 'OAuth', 'Directory Services'],
         },
       ],
     },

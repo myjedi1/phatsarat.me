@@ -22,9 +22,9 @@
       }
       <a
         class="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md uppercase tracking-widest hover:bg-[#333333] transition-all"
-        href="#"
+        href="https://www.linkedin.com/in/phatsarat-arjharnsiriwong-504b10301/"
       >
-        Resume
+        Connect
       </a>
     </div>
 
@@ -44,7 +44,9 @@
 
   <!-- Mobile menu panel -->
   @if (menuOpen()) {
-    <div class="md:hidden border-t border-border-subtle bg-background px-gutter py-6 flex flex-col gap-6">
+    <div
+      class="md:hidden border-t border-border-subtle bg-background px-gutter py-6 flex flex-col gap-6"
+    >
       @for (link of links; track link.path) {
         <a
           [routerLink]="link.path"
@@ -58,9 +60,9 @@
       }
       <a
         class="bg-primary text-on-primary px-6 py-3 font-label-md text-label-md uppercase tracking-widest text-center hover:bg-[#333333] transition-all"
-        href="#"
+        href="https://www.linkedin.com/in/phatsarat-arjharnsiriwong-504b10301/"
       >
-        Resume
+        Connect
       </a>
     </div>
   }

@@ -5,9 +5,9 @@ import { Skills } from './pages/skills/skills';
 import { Contact } from './pages/contact/contact';
 
 export const routes: Routes = [
-  { path: '', component: Home, title: 'DevCurator | Developer Portfolio' },
-  { path: 'experience', component: Experience, title: 'ARCHITECT | Experience' },
-  { path: 'skills', component: Skills, title: 'ARCHITECT | Skills & Technology' },
-  { path: 'contact', component: Contact, title: 'Contact | ARCHITECT' },
+  { path: '', component: Home, title: 'Phatsarat.me | Home' },
+  { path: 'experience', component: Experience, title: 'Phatsarat.me | Experience' },
+  { path: 'skills', component: Skills, title: 'Phatsarat.me | Skills & Technology' },
+  { path: 'contact', component: Contact, title: 'Phatsarat.me | Contact' },
   { path: '**', redirectTo: '' },
 ];
